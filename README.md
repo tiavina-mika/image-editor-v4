@@ -1,2 +1,2 @@
-# image-editor-v4
+# image-editor-react-konva
 Created with CodeSandbox
