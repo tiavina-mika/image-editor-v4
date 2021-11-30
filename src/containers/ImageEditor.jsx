@@ -30,7 +30,6 @@ const MASK_LAYER = {
 const ImageEditor = ({ image }) => {
   const maskLayerRef = useRef(MASK_LAYER);
   const invertedMaskRef = useRef();
-  const stageRef = useRef();
 
   const [imageMask] = useImage(mask, "Anonymous");
 
@@ -161,7 +160,6 @@ const ImageEditor = ({ image }) => {
     <div className="flexCenter stretchSelf p-y-20">
       <div className="flexCenter">
         <Stage
-          ref={stageRef}
           width={USER_IMAGE_LAYER.width}
           height={USER_IMAGE_LAYER.height}
           onWheel={handleWheel}
