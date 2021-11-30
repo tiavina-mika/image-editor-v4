@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { Stage, Layer, Image } from "react-konva";
 import useImage from "use-image";
 
@@ -35,8 +35,7 @@ const ImageEditor = ({ image }) => {
   const [imageMask] = useImage(mask, "Anonymous");
 
   const [values, setValues] = useState(() => ({
-    ...USER_IMAGE_LAYER,
-    rotation: 0
+    ...USER_IMAGE_LAYER
   }));
 
   //-----------------------------------------//
@@ -66,17 +65,6 @@ const ImageEditor = ({ image }) => {
     }
   }, [image]);
 
-  /*
-  !?!?
-  useEffect(() => {
-    maskLayerRef.current = MASK_LAYER;
-  });*/
-  // get the mask of the current selected userImage layer if there is any
-  // useEffect(() => {
-  //   if (!imageMask) return;
-  //   maskLayerRef.current = imageMask;
-  // }, [imageMask]);
-
   const complete = !!imageMask?.complete;
   useMemo(() => {
     if (!imageMask) return;
@@ -88,8 +76,6 @@ const ImageEditor = ({ image }) => {
   if (!image) {
     return null;
   }
-
-  // center and zoom the image by default
 
   const maxZoom = minZoom * 2;
 

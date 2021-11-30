@@ -6,20 +6,7 @@ import { Image, Group } from "react-konva";
 /* eslint-disable react/display-name */
 /* eslint-disable max-len */
 const KonvaImage = forwardRef(
-  (
-    {
-      x,
-      y,
-      width,
-      height,
-      image,
-      rotation,
-      // originTop = 0, originLeft = 0, // relative to the image top/left
-      onDragEnd,
-      container
-    },
-    ref
-  ) => {
+  ({ x, y, width, height, image, rotation, onDragEnd, container }, ref) => {
     // see https://konvajs.org/docs/posts/Position_vs_Offset.html
     // Offset change the origin of the shape
     // It changes the rotation origin, but also offsets the drawing of the shape.
